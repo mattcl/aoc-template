@@ -1,0 +1,14 @@
+[template]
+
+# since we basically have a template that generates a template, we want to
+# not make substitutions in these files. The justfile is because it uses liquid
+# markers for var substitutions.
+exclude = [
+    "justfile",
+    "script",
+    "template",
+]
+
+[placeholders.year]
+type = "string"
+prompt = "What year?"
