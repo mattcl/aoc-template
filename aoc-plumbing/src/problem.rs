@@ -80,6 +80,7 @@ where
 pub trait Problem: FromStr {
     const DAY: usize;
     const TITLE: &'static str;
+    const README: &'static str;
 
     type P1: Display + Serialize + PartialEq;
     type P2: Display + Serialize + PartialEq;
@@ -102,5 +103,9 @@ pub trait Problem: FromStr {
 
     fn padded_day() -> String {
         format!("{:03}", <Self as Problem>::DAY)
+    }
+
+    fn long_description() -> String {
+        format!("{} {}", <Self as Problem>::padded_day(), <Self as Problem>::README)
     }
 }

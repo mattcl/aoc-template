@@ -25,7 +25,7 @@ macro_rules! generate_cli {
         #[derive(Subcommand)]
         pub(crate) enum Commands {
             $(
-            #[command(about = $name::problem_label(), display_order = $day)]
+            #[command(about = $name::problem_label(), long_about = $name::long_description(), display_order = $day)]
             $name(Solver<$name>),
             )*
 

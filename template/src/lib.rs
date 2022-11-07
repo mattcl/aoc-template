@@ -16,6 +16,7 @@ impl FromStr for {{project-name|upper_camel_case}} {
 impl Problem for {{project-name|upper_camel_case}} {
     const DAY: usize = {{day}};
     const TITLE: &'static str = "{{project-name|title_case|downcase}}";
+    const README: &'static str = include_str!("../README.md");
 
     type P1 = &'static str;
     type P2 = &'static str;
