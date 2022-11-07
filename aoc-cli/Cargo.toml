@@ -10,7 +10,6 @@ name = "aoc"
 path = "src/main.rs"
 
 [dependencies]
-aoc_helpers = { workspace = true }
 aoc-plumbing = { path = "../aoc-plumbing" }
 anyhow = { workspace = true }
 clap = { version = "4", features = ["cargo", "derive", "wrap_help"] }
