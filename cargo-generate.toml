@@ -12,3 +12,13 @@ exclude = [
 [placeholders.year]
 type = "string"
 prompt = "What year?"
+
+[placeholders.author]
+type = "string"
+prompt = "Author for templated crate?"
+default = "Matt Chun-Lum"
+
+[placeholders.author_email]
+type = "string"
+prompt = "Author email for templated crate?"
+default = "matt@questionable.engineering"
