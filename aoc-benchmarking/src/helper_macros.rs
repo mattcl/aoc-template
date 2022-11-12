@@ -8,11 +8,11 @@ macro_rules! aoc_bench {
 
             group.bench_function($part1_desc, |b| {
                 let mut problem = <$problem>::instance(&input).expect("Could not parse input");
-                b.iter(|| problem.part_one())
+                b.iter(|| problem.part_one().expect("Failed to solve part one"))
             });
             group.bench_function($part2_desc, |b| {
                 let mut problem = <$problem>::instance(&input).expect("Could not parse input");
-                b.iter(|| problem.part_two())
+                b.iter(|| problem.part_two().expect("Failed to solve part two"))
             });
             group.finish();
         }
@@ -26,8 +26,8 @@ macro_rules! aoc_bench {
             group.bench_function($combined_desc, |b| {
                 let mut problem = <$problem>::instance(&input).expect("Could not parse input");
                 b.iter(|| {
-                    problem.part_one();
-                    problem.part_two();
+                    problem.part_one().expect("Failed to solve part one");
+                    problem.part_two().expect("Failed to solve part two");
                 })
             });
             group.finish();

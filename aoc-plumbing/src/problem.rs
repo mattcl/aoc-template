@@ -82,19 +82,20 @@ pub trait Problem: FromStr {
     const TITLE: &'static str;
     const README: &'static str;
 
+    type ProblemError: Send + Sync + From<<Self as FromStr>::Err> + 'static;
     type P1: Display + Serialize + PartialEq;
     type P2: Display + Serialize + PartialEq;
 
-    fn part_one(&mut self) -> Self::P1;
-    fn part_two(&mut self) -> Self::P2;
+    fn part_one(&mut self) -> Result<Self::P1, Self::ProblemError>;
+    fn part_two(&mut self) -> Result<Self::P2, Self::ProblemError>;
 
     fn instance(raw_input: &str) -> Result<Self, <Self as FromStr>::Err> {
         Self::from_str(raw_input)
     }
 
-    fn solve(raw_input: &str) -> Result<Solution<Self::P1, Self::P2>, <Self as FromStr>::Err> {
+    fn solve(raw_input: &str) -> Result<Solution<Self::P1, Self::P2>, Self::ProblemError> {
         let mut inst = Self::instance(raw_input)?;
-        Ok(Solution::new(inst.part_one(), inst.part_two()))
+        Ok(Solution::new(inst.part_one()?, inst.part_two()?))
     }
 
     fn problem_label() -> String {

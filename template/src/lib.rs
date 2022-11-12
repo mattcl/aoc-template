@@ -18,15 +18,16 @@ impl Problem for {{project-name|upper_camel_case}} {
     const TITLE: &'static str = "{{project-name|title_case|downcase}}";
     const README: &'static str = include_str!("../README.md");
 
+    type ProblemError = anyhow::Error;
     type P1 = &'static str;
     type P2 = &'static str;
 
-    fn part_one(&mut self) -> Self::P1 {
-        "not implemented"
+    fn part_one(&mut self) -> Result<Self::P1, Self::ProblemError> {
+        Ok("not implemented")
     }
 
-    fn part_two(&mut self) -> Self::P2 {
-        "not implemented"
+    fn part_two(&mut self) -> Result<Self::P2, Self::ProblemError> {
+        Ok("not implemented")
     }
 }
 

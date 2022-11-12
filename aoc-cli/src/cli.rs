@@ -1,4 +1,4 @@
-use std::{marker::PhantomData, path::{PathBuf, Path}, str::FromStr};
+use std::{marker::PhantomData, path::{PathBuf, Path}};
 
 use clap::{Args, Subcommand, Parser, CommandFactory};
 use clap_complete::{shells::Zsh, generate};
@@ -96,7 +96,7 @@ where
 impl<T> Solver<T>
 where
     T: Problem,
-    <T as FromStr>::Err: Into<anyhow::Error>,
+    <T as Problem>::ProblemError: Into<anyhow::Error>,
 {
     pub fn run(&self) -> Result<()> {
         _run::<T>(&self.input, self.json)
@@ -106,7 +106,7 @@ where
 fn _run<T>(input_file: &Path, json: bool) -> Result<()>
 where
     T: Problem,
-    <T as FromStr>::Err: Into<anyhow::Error>,
+    <T as Problem>::ProblemError: Into<anyhow::Error>,
 {
     let input = std::fs::read_to_string(input_file)
         .context("Could not read input file")?;
