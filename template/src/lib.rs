@@ -19,8 +19,8 @@ impl Problem for {{project-name|upper_camel_case}} {
     const README: &'static str = include_str!("../README.md");
 
     type ProblemError = anyhow::Error;
-    type P1 = &'static i64;
-    type P2 = &'static i64;
+    type P1 = i64;
+    type P2 = i64;
 
     fn part_one(&mut self) -> Result<Self::P1, Self::ProblemError> {
         Ok(0)
