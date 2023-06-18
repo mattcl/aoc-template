@@ -10,7 +10,7 @@ exclude = ["template"]
 
 [workspace.dependencies]
 anyhow = "1.0.65"
-aoc-std = { git = "https://github.com/mattcl/aoc-std" }
+aoc-std = { version = "0.1.0", registry = "ancalagon" }
 itertools = "0.10.5"
 nom = { version = "7.1", features = ["alloc"] }
 num = "0.4.0"
