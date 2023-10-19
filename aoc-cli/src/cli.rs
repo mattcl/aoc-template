@@ -48,19 +48,33 @@ macro_rules! generate_cli {
             }
         }
 
-        /// Run the solution for a specified day.
+        /// Run the solution for a specified day with a specified input.
         ///
         /// The day must be implemented and the specified input must exist.
         #[derive(Args)]
         pub(crate) struct Run {
             /// The day to run.
+            ///
+            /// This may be specified instead by setting the `AOC_DAY` env var.
+            /// An explicitly passed value will take precendence over the env
+            /// var.
+            #[clap(env = "AOC_DAY")]
             day: usize,
 
             /// The path to the input for this solution.
+            ///
+            /// This may be specified instead by setting the `AOC_INPUT` env
+            /// var. An explicitly passed value will take precendence over the
+            /// env var.
+            #[clap(env = "AOC_INPUT")]
             input: PathBuf,
 
             /// Display the output as json.
-            #[clap(short, long)]
+            ///
+            /// This may be specified instead by setting the `AOC_INPUT` env
+            /// var to `true`. If the flag is passed, on the command line, it
+            /// will take precendence over the env var.
+            #[clap(short, long, env = "AOC_JSON")]
             json: bool,
         }
 
