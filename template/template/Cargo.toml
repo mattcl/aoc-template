@@ -8,7 +8,6 @@ description = "{{project-name|title_case|downcase}}"
 
 [dependencies]
 aoc-plumbing = { path = "../aoc-plumbing" }
-aoc-std = { workspace = true }
 anyhow = { workspace = true }
 # itertools = { workspace = true }
 nom = { workspace = true }
