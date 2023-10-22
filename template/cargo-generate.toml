@@ -1,3 +1,24 @@
-[placeholders.day]
+[template]
+
+# since we basically have a template that generates a template, we want to
+# not make substitutions in these files. The justfile is because it uses liquid
+# markers for var substitutions.
+exclude = [
+    "justfile",
+    "script",
+    "template",
+]
+
+[placeholders.year]
 type = "string"
-prompt = "What day?"
+prompt = "What year?"
+
+[placeholders.author]
+type = "string"
+prompt = "Author for templated crate?"
+default = "Matt Chun-Lum"
+
+[placeholders.author_email]
+type = "string"
+prompt = "Author email for templated crate?"
+default = "matt@questionable.engineering"
