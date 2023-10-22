@@ -27,5 +27,5 @@ Rather use python instead? That template is
 
 Generate the template using the following command and follow the prompts:
 ```
-cargo generate https://github.com/mattcl/aoc-template.git
+cargo generate -g https://github.com/mattcl/aoc-template.git
 ```
