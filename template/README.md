@@ -37,6 +37,8 @@ workspace crate named `calorie-counting`. The `new.sh` script will make the
 necessary modifications to include this day's solution in the CLI, as well as
 adding the benchmark macro calls to the benchmarking crate.
 
+The real input is stored in each day's workspace crate. Example inputs are
+embedded in the source files.
 
 
 ### Building the cli
