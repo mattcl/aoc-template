@@ -11,7 +11,7 @@ cargo test
 just test
 
 # run benchmarks
-just bench_all
+just bench-all
 
 # build the cli
 just build-cli

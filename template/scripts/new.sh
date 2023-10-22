@@ -1,14 +1,17 @@
 #!/bin/bash
 set -e
 
-cargo generate --path ./template --lib --name $2 -d day=$1
+# This bit of crazy generates the new crate and adds the relevant imports and
+# macro lines to the cli and benchmarking crates
 
-printf -v DAY "%03d" $1
+cargo generate --path ./template --lib --name "$2" -d day="$1"
+
+printf -v DAY "%03d" "$1"
 
 EXPECTED="$2"
 DESIRED="day-${DAY}-$2"
-CRATE_NAME=$(cat $EXPECTED/crate_ref)
-STRUCT_NAME=$(cat $EXPECTED/name_ref)
+CRATE_NAME=$(cat "$EXPECTED/crate_ref")
+STRUCT_NAME=$(cat "$EXPECTED/name_ref")
 
 rm "$EXPECTED/crate_ref"
 rm "$EXPECTED/name_ref"
