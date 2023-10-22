@@ -19,7 +19,7 @@ Rather use python instead? That template is
 
 1. git
 2. rust >=1.66 (1.73 preferred)
-3. [cargo-generate](cargo-generate = "0.18.4")
+3. [cargo-generate](https://crates.io/crates/cargo-generate)
 4. [just](https://github.com/casey/just#packages)
 
 
