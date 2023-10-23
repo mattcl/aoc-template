@@ -58,7 +58,7 @@ default. You can run these by running
 
 ```
 # tests against real inputs should be run in release mode
-cargo test --release -- ---ignored
+cargo test --release -- --ignored
 
 # or, if you have just installed:
 just test
