@@ -84,7 +84,14 @@ macro_rules! generate_cli {
                     $(
                     $day => _run::<$name>(&self.input, self.json),
                     )*
-                    _ => Err(anyhow!("Unknown day: {}", self.day))
+                    _ => {
+                        if self.json {
+                            println!("\"not implemented\"");
+                        } else {
+                            println!("not implemented");
+                        }
+                        Ok(())
+                    }
                 }
             }
         }
