@@ -1,7 +1,7 @@
 # An Advent of Code cargo-generate template
 
 This template generates a rust project that is compatible with the
-[specifications](https://github.com/mattcl/aoc-ci-bencher/blob/master/SPECIFICATION.md)
+[specifications](https://github.com/mattcl/aoc-benchmarks/blob/master/SPECIFICATION.md)
 for supporting comparative benchmarks between different advent of code
 implementations.
 

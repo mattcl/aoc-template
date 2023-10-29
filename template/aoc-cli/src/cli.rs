@@ -2,14 +2,19 @@ use std::{marker::PhantomData, path::{PathBuf, Path}};
 
 use clap::{Args, Subcommand, Parser, CommandFactory};
 use clap_complete::{shells::Zsh, generate};
-use anyhow::{anyhow, Context, Result};
+use anyhow::{Context, Result};
 use aoc_plumbing::Problem;
 // import_marker
 
 // I'm not proud
 macro_rules! generate_cli {
     ($(($name:ident, $day:literal)),* $(,)?) => {
+        /// Advent of Code solutions for {{year}}
         #[derive(Parser)]
+        #[command(name = "aoc", author, version)]
+        #[command(help_template = "\
+            {name} {version} by {author}
+            {about-section}\n{usage-heading} {usage}\n\n{all-args}{tab}")]
         pub(crate) struct Cli {
             #[command(subcommand)]
             pub command: Commands,
