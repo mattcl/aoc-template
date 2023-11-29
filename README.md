@@ -8,7 +8,7 @@ implementations.
 More information about how to use the generated project can be found in the
 generated README (which is in the source of the template).
 
-The _template_ is MIT-licensed. Pick whatever license suits you for The
+The _template_ is MIT-licensed. Pick whatever license suits you for the
 generated code.
 
 Rather use python instead? That template is
