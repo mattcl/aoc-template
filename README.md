@@ -22,6 +22,14 @@ Rather use python instead? That template is
 3. [cargo-generate](https://crates.io/crates/cargo-generate)
 4. [just](https://github.com/casey/just#packages)
 
+\* On OSX and others, you may need to install cargo generate with the following
+(see (this
+issue)[https://github.com/cargo-generate/cargo-generate/issues/1318]):
+
+```
+cargo install cargo-generate --features "vendored-openssl"
+```
+
 
 ## Usage
 
