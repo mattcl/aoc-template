@@ -9,7 +9,7 @@ day-specific subcommand.
 ### Prerequisite
 
 1. git
-2. rust >=1.66 (1.74 preferred)
+2. rust >=1.66 (1.91 preferred)
 3. [cargo-generate](https://crates.io/crates/cargo-generate)
 4. [just](https://github.com/casey/just#packages)
 5. [cargo-flamegraph](https://crates.io/crates/flamegraph) (optional)
