@@ -2,7 +2,7 @@
 name = "aoc-cli"
 version = "0.1.0"
 authors = ["{{author}} <{{author_email}}>"]
-edition = "2021"
+edition = "2024"
 description = "A command line interface for executing Advent of Code solutions."
 
 [[bin]]
