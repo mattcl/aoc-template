@@ -19,7 +19,7 @@ Rather use python instead? That template is
 
 1. git
 2. rust >=1.77 (>= 1.82 preferred)
-3. [cargo-generate](https://crates.io/crates/cargo-generate)
+3. [cargo-generate](https://crates.io/crates/cargo-generate) >= 0.23.7
 4. [just](https://github.com/casey/just#packages)
 
 \* On OSX and others, you may need to install cargo generate with the following
